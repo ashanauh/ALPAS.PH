@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: white;
+    line-height: 1.6;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;              
+    padding: 0 5%;              
+    background-color: rgba(255, 164, 209, 0.61);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1000;
+    display: flex;              
+    justify-content: space-between;  
+    align-items: center;         
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.5rem;               
+}
+
+.nav-links li a {
+    color: #e0e0ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #ff69b4;
+}
+
+.section {
+    position: relative;
+    min-height: 100vh;
+    padding: 140px 40px 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+
+    background: url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat;
+    filter: blur(6px) brightness(50%); 
+    
+    z-index: -1;
+}
+
+.section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: rgb(255, 242, 242);
+    margin-top: 0;
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('2.jpg') center/cover no-repeat fixed;
+   
+}
+
+.parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 6, 6, 0.65); 
+    z-index: 1;
+}
+
+.hero .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.btn-submit {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 14px 48px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-submit:hover {
+    background: #ff69b4;
+    color: white;
+    border-color: #ff69b4;
+    transform: translateY(-3px);
+}
+
+ul {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+li {
+    margin: 16px 0;
+}
+
+details {
+    background: rgba(219, 0, 128, 0.75);
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+}
+
+details[open] {
+    background: rgba(6, 182, 182, 0.9);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #ffddff;
+    outline: none;
+}
+
+details p {
+    margin-top: 12px;
+    padding-left: 12px;
+    color: #e0f0ff;
+}
+
+#prevention.section {
+    padding-top: 60px;
+}
+.tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    padding: 30px 0;
+    
+}
+
+.flip-card {
+    width: 270px;
+    height: 190px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s;
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    border-radius: 14px;
+}
+
+.flip-card.active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.flip-card-front,
+.flip-card-back {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+
+.flip-card-front h3,
+.flip-card-back h3 {
+    color: #000000;
+}
+
+.flip-card-back p {
+    color: #000000;
+}
+.flip-card-back {
+    background: rgba(255, 235, 238, 0.95);
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+    margin: 0 0 14px;
+    font-size: 1.45rem;
+    color: #350426;
+}
+
+.flip-card-back p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.flip-card:hover .flip-card-inner {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.clinics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.clinic-card {
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+
+    color: #fff;
+    width: 280px;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.clinic-card:hover {
+    transform: translateY(-8px);
+}
+
+.clinic-card h3 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.clinic-card p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+#clinics.section {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 40px;
+}
+
+#clinics .section-content {
+    max-width: 1300px;
+}
+
+.clinics-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.services-box {
+    background: rgba(255, 255, 255, 0.15);   
+    backdrop-filter: blur(12px);             
+    -webkit-backdrop-filter: blur(12px);     
+    
+    padding: 30px 40px;                    
+    border-radius: 16px;                     
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);  
+    border: 1px solid rgba(255,255,255,0.3);  
+    
+    max-width: 900px;                       
+    margin: 0 auto;                           
+    text-align: left;                          
+}
+
+.services-box ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.services-box li {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #fff; 
+}
+
+.clinic-link {
+    text-decoration: none;
+}
+
+.clinic-link .clinic-card {
+    cursor: pointer;
+}
+
+.clinic-link:hover .clinic-card {
+    transform: translateY(-10px) scale(1.02);
+}
+.item {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.title:hover {
+  text-shadow: 0 0 6px rgba(255, 236, 236, 0.3);
+}
+
+.desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #ffdfdf;
+}
+
+.item:hover .desc {
+  max-height: 200px;
+}
+
+span {
+  font-size: 14px;
+  color: #fffcfc;
+}
+
+.note {
+  margin-top: 20px;
+  font-style: italic;
+  color: #ffffff;
+}
+footer {
+    background-color: rgba(255, 181, 218, 0.781);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    padding: 24px;
+    color: #000000;
+    font-size: 0.95rem;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+@media (max-width: 768px) {
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 100px 20px 60px;
+    }
+
+    .flip-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+  
+    .clinic-card {
+        width: 90%;
+    }
+
+}
